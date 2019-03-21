@@ -1,4 +1,4 @@
-@[TOC](Flask加载yaml配置文件)
+﻿@[TOC](Flask加载yaml配置文件)
 
 tips:本文代码基于python3
 ***
@@ -10,7 +10,7 @@ tips:本文代码基于python3
   YAML是一种直观的能够被电脑识别的的数据序列化格式，容易被人类阅读，并且容易和脚本语言交互。YAML类似于XML，JSON等，但是语法简单得多，对于转化成数组或可以hash的数据时是很简单有效的。[详细了解](https://en.wikipedia.org/wiki/YAML)
 ***
 # 如何编写yaml文件？
-```
+```yaml
 # yaml格式
 name: 张三
 age: 37
@@ -21,7 +21,7 @@ children:
    age: 12
 ```
 上面这段代码在python中具体输出如下：
-```
+```python
 {
 'name': '张三', 'age': 37, 
 'children': [{'name': '小明', 'age': 15}, {'name': '小红', 'age': 12}]
@@ -38,7 +38,7 @@ yaml文件编写规则:
 - 安装Flask `pip install Flask`
 
 编写一个配置文件（setting.yaml）如下：
-```
+```yaml
 COMMON: &common
   SECRET_KEY: insecure
   DEBUG: False
@@ -57,7 +57,7 @@ PRODUCTION: &production
 ```
 
 编写读取yaml文件函数（read_yaml）
-```
+```python
 import yaml
 def read_yaml(yaml_file_path):
     with open(yaml_file_path, 'rb') as f:
@@ -67,20 +67,19 @@ return cf
 ```
 flask加载yaml文件配置
 
-```
+```python
 from flask import Flask
 app = Flask(__name__)
 cf = read_yaml("setting.yaml")
 app.config.update(cf)
 ```
 完整代码(app.py)
-```
+```python
 from flask import Flask
 import yaml
 def read_yaml(yaml_file_path):
     with open(yaml_file_path, 'rb') as f:
-        cont = f.read()
-    cf = yaml.load(cont)
+        cf= yaml.safe_load(f.read()) # yaml.load(f.read())
 return cf
 
 app = Flask(__name__)
@@ -104,7 +103,7 @@ if __name__ == "__main__":
 run.py
 ```
 - 配置文件（config.yaml）
-```
+```yaml
 COMMON: &common #标识
   DEBUG: False
   SECRET_KEY: insecure
@@ -121,12 +120,13 @@ PRODUCTION: &production
   <<: *common
   SECRET_KEY: mdd1##$$%^!DSA#FDSF
 ```
-- 工厂文件（factoty.py）
-```
+- 工厂文件（factory.py）
+```python
 import yaml
 import os
 from flask import Flask
-def create_app(config_name, config_path):
+def create_app(config_name=None, config_path=None):
+	app = Flask(__name__)
     # 读取配置文件
     if not config_path:
         pwd = os.getcwd()
@@ -144,7 +144,7 @@ def read_yaml(config_name,config_path):
 	"""
 	if config_name and config_path:
         with open(config_path, 'r') as f:
-            conf = yaml.load(f.read())
+            conf =  yaml.safe_load(f.read()) # yaml.load(f.read())
         if config_name in conf.keys():
             return conf[config_name.upper()]
         else:
@@ -153,7 +153,7 @@ def read_yaml(config_name,config_path):
         raise ValueError('请输入正确的配置名称或配置文件路径')
 ```
 - 运行文件(run.py)
-```
+```python
 from app import factory
 app = factory.create_app(config_name='DEVELOPMENT')
 
