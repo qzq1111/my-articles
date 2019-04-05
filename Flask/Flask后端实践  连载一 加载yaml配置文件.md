@@ -1,6 +1,9 @@
-﻿@[TOC](Flask加载yaml配置文件)
+﻿@[TOC](Flask 加载yaml配置文件)
 
-tips:本文代码基于python3
+***
+tips:
+- 本文代码基于python3
+- [代码仓库](https://github.com/mad7802004/flask-resful-example)
 ***
 # 项目场景
 某天，项目经理A要求所有的配置文件需要可以配置，并且需要用yaml格式的文件进行配置。方便以后对配置文件的修改以及读取不同的配置内容，而不是在代码中修改配置信息。

@@ -1,9 +1,10 @@
-﻿@[Toc](Flask yaml配置logger以及logger在蓝图Blueprint使用)
+﻿@[Toc](Flask yaml配置logger及logger使用)
 
 ***
 tips: 
-- 上一篇文章[Flask如何加载yaml文件配置](https://blog.csdn.net/qq_22034353/article/details/88591681)主要介绍了Flask如何加载yaml文件配置，这篇文章则是进一步使用yaml文件来配置logger，以及logger的使用。
+- 上一篇文章[《Flask后端实践  连载一 加载yaml配置文件》](https://blog.csdn.net/qq_22034353/article/details/88591681)主要介绍了Flask如何加载yaml文件配置，这篇文章则是进一步使用yaml文件来配置logger及logger的使用。
 - 本文基于python3编写
+- [代码仓库](https://github.com/mad7802004/flask-resful-example)
 ***
 # Python logging模块
 - Logging日志一共五个级别
@@ -71,7 +72,8 @@ if __name__ == "__main__":
 	app = Flask(__name__)
     handler = logging.FileHandler(filename="test.log", encoding='utf-8')
     handler.setLevel("DEBUG")
-    formatter = logging.Formatter("%(asctime)s[%(name)s][%(levelname)s] :%(levelno)s: %(message)s")
+    format_ ="%(asctime)s[%(name)s][%(levelname)s] :%(levelno)s: %(message)s"
+    formatter = logging.Formatter(format_)
     handler.setFormatter(formatter)
     app.logger.addHandler(handler)
     if __name__ == "__main__":
@@ -130,7 +132,8 @@ def create_app():
     # 方法一日志设置
     handler = logging.FileHandler(filename="test.log", encoding='utf-8')
     handler.setLevel("DEBUG")
-    formatter = logging.Formatter("%(asctime)s[%(name)s][%(levelname)s] :%(levelno)s: %(message)s")
+    format_ ="%(asctime)s[%(name)s][%(levelname)s] :%(levelno)s: %(message)s"
+    formatter = logging.Formatter(format_)
     handler.setFormatter(formatter)
     app.logger.addHandler(handler)
     # 方法二日志设置
@@ -164,7 +167,7 @@ if __name__ == "__main__":
 - 对于以上的Flask logger的基本配置都能满足基本的日常需求。但是如果同时配置多个不同的handler，并且将不同内容的日志输出到不同的文件会很麻烦。所以需要一个统一的日志配置文件来处理。
 ***
 # yaml配置logger
-1. 在前文中，第二种配置logger的方法中使用了字典，在上一篇文章[Flask如何加载yaml文件配置](https://blog.csdn.net/qq_22034353/article/details/88591681)中介绍了python读取yaml文件以及yaml文件在python中的转换。所以只要按照一定的规则编写yaml文件，加载到日志配置中，即可完成配置。
+1. 在前文中，第二种配置logger的方法中使用了字典，在上一篇文章[《Flask如何加载yaml文件配置》](https://blog.csdn.net/qq_22034353/article/details/88591681)中介绍了python读取yaml文件以及yaml文件在python中的转换。所以只要按照一定的规则编写yaml文件，加载到日志配置中，即可完成配置。
 2. 文件目录
 	```
 	-----app
