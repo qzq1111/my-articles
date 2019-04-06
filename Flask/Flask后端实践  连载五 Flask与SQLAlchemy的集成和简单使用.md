@@ -1,17 +1,17 @@
 ﻿@[TOC](Flask与SQLAlchemy的集成和简单使用)
 
-****
+
 tips:
  - 本文主要介绍Flask与SqlAlchemy的集成和简单使用
  - 本文基于python3编写
  - [代码仓库](https://github.com/mad7802004/flask-resful-example)
  
- ***
+  
  # 前言
  - 在实际的生产中，往往都需要数据库来做数据存储以及信息交互。
  - 本文选用SQLAlchemy作为orm工具，可以减少sql代码编写以及防止sql注入的风险的存在。
  - 本文使用免费的mysql数据库。
- ***
+  
  
  # Flask与SQLAlchemy结合
  1. 安装flask-sqlalchemy  `pip install  flask-sqlalchemy`
@@ -44,7 +44,7 @@ tips:
 
 	```
  
-***
+ 
 # 定义model及创建数据库表
 - 定义model(model.py)
 	```python
@@ -88,7 +88,7 @@ tips:
 	```
 - 创建数据库表  执行`db.create_all()`命令，需要在启动FlaskApp之后再命令行执行
 
-***
+ 
 # 增
 1. 单个新建
 	```python
@@ -127,7 +127,7 @@ tips:
 	db.session.execute(User.__table__.insert(), new_users )
     db.session.commit()
 	```
-***
+ 
 # 查
 1. 查询一个元素
 	```python
@@ -252,7 +252,7 @@ tips:
     # avg 平均年龄
     avg_age = db.session.query(db.func.avg (User.age)).first()
 	```
-***
+ 
 # 改
 1. 单个修改(更新)
 	```python
@@ -271,7 +271,7 @@ tips:
 	db.session.query(User).filter(User.id.in_((1, 2, 3))).update({"age ":25})
 	db.session.commit()
 	```
-***
+ 
 # 删
 1. 单个删除
 	```python
@@ -290,7 +290,7 @@ tips:
 	db.session.query(User).delete(synchronize_session=False)
 	db.session.commit() 
 	```
-***
+ 
 
 # 事务
 1. rollback回滚错误操作
@@ -320,11 +320,11 @@ tips:
 	except:
 		db.session.rollback()
 	```
-***
+ 
 # 总结
 - 本文简单的介绍了Flask与SQLAlchemy集成方法以及SQLAlchemy的简单使用
 - 读者想了解更多可以去[SQLAlchemy官方文档](https://www.sqlalchemy.org)详细了解
 - 下一篇文章将实现基于Flask与SQLAlchemy的单表接口
-***
+ 
 
 

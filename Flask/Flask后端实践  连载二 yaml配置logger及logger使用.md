@@ -1,11 +1,11 @@
 ﻿@[Toc](Flask yaml配置logger及logger使用)
 
-***
+ 
 tips: 
 - 上一篇文章[《Flask后端实践  连载一 加载yaml配置文件》](https://blog.csdn.net/qq_22034353/article/details/88591681)主要介绍了Flask如何加载yaml文件配置，这篇文章则是进一步使用yaml文件来配置logger及logger的使用。
 - 本文基于python3编写
 - [代码仓库](https://github.com/mad7802004/flask-resful-example)
-***
+ 
 # Python logging模块
 - Logging日志一共五个级别
 
@@ -48,7 +48,7 @@ logger.critical("this is critical")
 2019-03-18 21:39:37,260 - this is critical
 ```
 - 查看更多[详细信息](http://python.jobbole.com/86887/)
-***
+ 
 # Flask自带logger
 Flask在0.3版本后就有了日志工具logger。
 - Flask[日志配置](https://dormousehole.readthedocs.io/en/latest/logging.html#logging)
@@ -165,7 +165,7 @@ if __name__ == "__main__":
 2019-03-18 22:04:03,992[flask.app][CRITICAL] :50: this is critical
 ```
 - 对于以上的Flask logger的基本配置都能满足基本的日常需求。但是如果同时配置多个不同的handler，并且将不同内容的日志输出到不同的文件会很麻烦。所以需要一个统一的日志配置文件来处理。
-***
+ 
 # yaml配置logger
 1. 在前文中，第二种配置logger的方法中使用了字典，在上一篇文章[《Flask如何加载yaml文件配置》](https://blog.csdn.net/qq_22034353/article/details/88591681)中介绍了python读取yaml文件以及yaml文件在python中的转换。所以只要按照一定的规则编写yaml文件，加载到日志配置中，即可完成配置。
 2. 文件目录
@@ -297,7 +297,7 @@ if __name__ == "__main__":
 	if __name__ == "__main__":
 	    app.run()
 	```
-***
+ 
 
 # logger在蓝图(Blueprint)中的使用
 
@@ -344,11 +344,11 @@ if __name__ == "__main__":
 	# 2019-03-20 22:05:44,705 [app.test] [ERROR] :40: this is error
 	# 2019-03-20 22:05:44,705 [app.test] [CRITICAL] :50: this is critical
 	```
-***
+ 
 
 # 总结
 - 本文主要介绍了Python logging模块的简单使用，读者可根据自身需要进行深入学习。
 - 本文介绍Flask的官方日志配置配置方法以及工厂模式下蓝图如何使用Flask自带logger。
 - 实现yaml文件配置Flask日志配置，以及两种不同的输出日志选项（Flask自带logger及文件名logger）。
 -  下一篇将介绍如何设计实现FlaskRestful标准化接口。
-***
+ 
