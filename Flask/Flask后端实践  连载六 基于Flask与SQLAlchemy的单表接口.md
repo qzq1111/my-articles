@@ -20,6 +20,7 @@ tips:
 - Flask提供MethodView对每个 HTTP 方法执行不同的函数，即只需要修改不同函数处理方法。详见[官方文档](http://docs.jinkan.org/docs/flask/views.html#id4)
 - 官方例子
 1. 定义接口方法
+
 	|URL	|HTTP 方法|描述
 	|--|--|--|
 	| /users/	|GET	|获得全部用户的列表
