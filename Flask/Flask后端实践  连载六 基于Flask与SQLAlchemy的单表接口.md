@@ -524,7 +524,6 @@ tips:
 	    文章单表接口
 	    """
 	    __model__ = Article
-	    __methods__ = ["GET", "POST", "DELETE", "PUT"]
 	    service_name = 'article'
 	```
 3. 注册服务(app.py)
