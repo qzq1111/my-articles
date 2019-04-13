@@ -11,6 +11,7 @@
 - [Flask后端实践  连载四 接口响应封装及自定义json返回类型](https://blog.csdn.net/qq_22034353/article/details/88758395)
 - [Flask后端实践  连载五 Flask与SQLAlchemy的集成和简单使用](https://blog.csdn.net/qq_22034353/article/details/88840483)
 - [Flask后端实践  连载六 基于Flask与SQLAlchemy的单表接口](https://blog.csdn.net/qq_22034353/article/details/89043562)
+- [Flask后端实践  连载七 Flask使用redis数据库](https://blog.csdn.net/qq_22034353/article/details/89107062)
 
 ## Golang 相关
 - 待~~
