@@ -1,4 +1,4 @@
-﻿@[Toc](Flask 接口响应封装及自定义json返回类型)
+﻿# Flask 接口响应封装及自定义json返回类型
 
  
 tips:
@@ -7,7 +7,7 @@ tips:
 - [代码仓库](https://github.com/mad7802004/flask-resful-example)
 
  
-# 问题重现
+## 问题重现
 - 前文[《Flask后端实践  连载三 接口标准化》](https://blog.csdn.net/qq_22034353/article/details/88701947)实现了响应文本的封装，即：
 	```python
 	from response import ResMsg
@@ -34,7 +34,7 @@ tips:
 	|None|null|
 
  
-# 统一封装，减少重复代码
+## 统一封装，减少重复代码
 1. Python装饰器
 	Python装饰器在网上有许多教程，请读者自行学习装饰的原理以及用法。知乎上抄的这一段，装饰器本质上是一个Python函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。它经常用于有切面需求的场景，比如：插入日志、性能测试、事务处理、缓存、权限校验等场景。装饰器是解决这类问题的绝佳设计，有了装饰器，我们就可以抽离出大量与函数功能本身无关的雷同代码并继续重用。概括的讲，装饰器的作用就是为已经存在的对象添加额外的功能。[知乎详解](https://www.zhihu.com/question/26930016)
 	
@@ -114,7 +114,7 @@ tips:
 	    return res.data
 	```
  
-# 解决json类型错误
+## 解决json类型错误
 1. Flask json转换类如下，只需要我们重新写default函数，定义转换规则，便能到达我们想要的效果。
 	```python
 	class JSONEncoder(_json.JSONEncoder):
@@ -244,6 +244,6 @@ tips:
 	}
 	```
  
-# 总结
+## 总结
 - 利用装饰器和重写类的方法，解决了前文提出的问题。
 - 下一篇文章将介绍Flask与SQLAlchemy的集成和简单使用。

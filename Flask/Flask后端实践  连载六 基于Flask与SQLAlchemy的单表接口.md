@@ -1,4 +1,4 @@
-﻿@[TOC](基于Flask与SQLAlchemy的单表接口)
+﻿# 基于Flask与SQLAlchemy的单表接口
 
 tips:
  - 本文主要介绍基于Flask与SQLAlchemy的单表接口
@@ -6,15 +6,15 @@ tips:
  - 本文适合有一定Flask项目的朋友阅读
  - [代码仓库](https://github.com/qzq1111/flask-resful-example)
 
-# 项目场景
+## 项目场景
 一日，项目经理A找到我，先是表扬最近项目重构的不错，然后，提出一个单表接口想法。经过和他的仔细探讨，单表接口主要是实现一个数据表的增删改查，不会对其他的数据表造成干扰。
 
-# 技术细节
+## 技术细节
 - 实现http请求分发处理
 - 实现请求参数识别和处理
 - 实现数据库操作
 
-# 实现逻辑
+## 实现逻辑
 ![实现逻辑](https://img-blog.csdnimg.cn/20190408163220551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyMDM0MzUz,size_16,color_FFFFFF,t_70)
 # Flask MethodView
 - Flask提供MethodView对每个 HTTP 方法执行不同的函数，即只需要修改不同函数处理方法。详见[官方文档](http://docs.jinkan.org/docs/flask/views.html#id4)
@@ -65,7 +65,7 @@ tips:
 	                 methods=['GET', 'PUT', 'DELETE'])
 	```
 
-# 编写字段解析类
+## 编写字段解析类
 1. 参数定义
     用法 **operator_modelFiled** ，即 下划线  前部分为**操作方法**，后部分为**model的键**。因此**所有的键都应与数据库表字段对应**。
     
@@ -297,7 +297,7 @@ tips:
 	
 	```
 
-# 编写数据库查询类
+## 编写数据库查询类
 1. 定义
 	根据项目实际需求，单表接口主要涉及到数据表的**增删改查**，主要有新建数据、批量新建数据、删除、更新、主键查询、多条件查询、分页、排序等数据库操作方法。
 
@@ -395,7 +395,7 @@ tips:
 	                for p in self.__model__.__mapper__.iterate_properties}
 	        return data
 	```
-# 编写Service类
+## 编写Service类
 1. 定义
 	前面我们已经知道了Flask实现了不同http请求的分发(MethodView)，因此只需要自定义不同http请求处理逻辑。通过前面以及解决了参数解析或数据库操作。那么将BaseParse, BaseQuery, MethodView组合起来，就可以完成单表接口。
 2. 实现代码(base.py)
@@ -502,7 +502,7 @@ tips:
 	            res.update(code=ResponseCode.FAIL)
 	        return res.data
 	```
-#  单表接口使用
+##  单表接口使用
 1. 数据库表(model.py)
 	```python
 	class Article(db.Model):
@@ -557,7 +557,7 @@ tips:
 	- 删除 DELETE  http://127.0.0.1:5000/article/1
 	返回：`{"code":0,"data":null,"lang":"zh_CN","msg":"成功"}`
 	  
-# 总结
+## 总结
 - 文中涉及到了字符串操作解析方面、类的定义、SQLAlchemy使用，Flask MethodView使用
 - 通过类继承的方法，可以快速扩展单表接口，大大的提高了开发效率。如果有其他实现需求，也可以通过重写的方法完成定制。
 - 下一篇文章将介绍reids在Flask里面的使用

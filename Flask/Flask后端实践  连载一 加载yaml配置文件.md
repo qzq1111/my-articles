@@ -1,18 +1,18 @@
-﻿@[TOC](Flask 加载yaml配置文件)
+﻿# Flask 加载yaml配置文件
 
 
 tips:
 - 本文代码基于python3
 - [代码仓库](https://github.com/mad7802004/flask-resful-example)
 
-# 项目场景
+## 项目场景
 某天，项目经理A要求所有的配置文件需要可以配置，并且需要用yaml格式的文件进行配置。方便以后对配置文件的修改以及读取不同的配置内容，而不是在代码中修改配置信息。
 
 
-# 什么是yaml文件？
+## 什么是yaml文件？
   YAML是一种直观的能够被电脑识别的的数据序列化格式，容易被人类阅读，并且容易和脚本语言交互。YAML类似于XML，JSON等，但是语法简单得多，对于转化成数组或可以hash的数据时是很简单有效的。[详细了解](https://en.wikipedia.org/wiki/YAML)
 
-# 如何编写yaml文件？
+## 如何编写yaml文件？
 ```yaml
 # yaml格式
 name: 张三
@@ -35,7 +35,7 @@ yaml文件编写规则:
 - [英文](https://yaml.org/)
 - [中文](https://blog.csdn.net/vincent_hbl/article/details/75411243)
  
-# Flask加载yaml配置文件
+## Flask加载yaml配置文件
 - 创建虚拟环境，启用虚拟环境
 - 安装PyYAML `pip install PyYAML`
 - 安装Flask `pip install Flask`
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     app.run()
 ```
  
-# 工厂模式
+## 工厂模式
 
 - 文件目录
 ```
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     app.run()
 ```
  
-# 总结
+## 总结
 -  yaml编写配置文件，简单高效。
 -  编写不同的配置内容，方便生产开发测试使用。
 -  目前实现了flask加载yaml配置文件，后续的文章还有更多关于yaml文件配置flask内容。

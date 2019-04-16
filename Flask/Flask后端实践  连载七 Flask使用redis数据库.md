@@ -1,20 +1,20 @@
-﻿@[TOC](Flask使用redis数据库)
+﻿# Flask使用redis数据库
 
 tips:
  - 本文简单介绍Flask中使用redis
  - 本文代码基于python3编写
  - [代码仓库](https://github.com/qzq1111/flask-resful-example)
 
-# 项目场景
+## 项目场景
 在实际项目中，不频繁变化且重复使用的数据、有一定时效的数据等。放入redis中，不仅可以提高查询效率，还能减少维护成本。实际应用比如手机验证码，token验证、任务调度等。
-# redis
+## redis
 1. 定义
 REmote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value存储系统。Redis是一个开源的使用ANSI C语言编写、遵守BSD协议、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。它通常被称为数据结构服务器，因为值（value）可以是 字符串(String), 哈希(Hash), 列表(list), 集合(sets) 和 有序集合(sorted sets)等类型。
 2. 安装
 此处[下载](https://github.com/MicrosoftArchive/redis/releases)对应系统的安装包，运行安装包即可。具体过程可以在[菜鸟教程](http://www.runoob.com/redis/redis-install.html)查看。
 3. 使用方法
  [菜鸟教程](http://www.runoob.com/redis/redis-commands.html)查看
-# Python使用redis
+## Python使用redis
 1. 安装Python redis包`pip install redis`
 2. 简单使用
 	```python
@@ -49,7 +49,7 @@ REmote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value�
 	# 更多相关内容可以参考菜鸟教程
 
 	```
-# Flask使用redis
+## Flask使用redis
 1. 封装redis方法(util.py)
 	```python
 	from flask import current_app
@@ -192,7 +192,7 @@ REmote DIctionary Server(Redis) 是一个由Salvatore Sanfilippo写的key-value�
 	4.1 访问 `http://127.0.0.1:5000/testRedisWrite` 返回 `"ok"`
 	4.2 访问 `http://127.0.0.1:5000/testRedisRead` 返回 `test_value`
 	
-# 总结
+## 总结
 - 简单的使用了redis以及相关的API封装，方便快捷的使用。
 - 接下来的一篇文章，将介绍docker+gunicorn+nginx部署Flask后端的相关知识
 
