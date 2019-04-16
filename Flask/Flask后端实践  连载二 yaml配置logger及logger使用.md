@@ -185,7 +185,7 @@ Flask在0.3版本后就有了日志工具logger。
 	disable_existing_loggers: False
 	# 定义日志输出格式，可以有多种格式输出
 	formatters:
-		simple:
+	    simple:
 	    	format: "%(message)s"
 	    error:
 	        format: "%(asctime)s [%(name)s] [%(levelname)s] :%(levelno)s: %(message)s"
