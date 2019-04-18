@@ -71,7 +71,7 @@ RUN pip --no-cache-dir install  -i ${PIPURL} gunicorn==19.9.0
 RUN pip --no-cache-dir install  -i ${PIPURL} flask==1.0.2
 RUN pip --no-cache-dir install  -i ${PIPURL} gevent==1.4.0
 
-CMD gunicorn  -c gun.conf wsgi_gunicorn:app
+CMD gunicorn  -c gun.conf app:app
 ```
 #### 说明
 Dockerfile 文件是用于定义 Docker 镜像生成流程的配置文件，文件内容是一条条指令，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建；这些指令应用于基础镜像并最终创建一个新的镜像，可以认为用于快速创建自定义的Docker镜像。
