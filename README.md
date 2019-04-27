@@ -13,6 +13,6 @@
 - [Flask后端实践  连载六 基于Flask与SQLAlchemy的单表接口](https://blog.csdn.net/qq_22034353/article/details/89043562)
 - [Flask后端实践  连载七 Flask使用redis数据库](https://blog.csdn.net/qq_22034353/article/details/89107062)
 - [Flask后端实践  连载八 Docker+Gunicorn+Nginx部署Flask后端](https://blog.csdn.net/qq_22034353/article/details/89289404)
-
+- [Flask后端实践  连载九 Flask-APScheduler定时任务与坑点解决方法](https://blog.csdn.net/qq_22034353/article/details/89362959)
 ## Golang 相关
 - 待~~
