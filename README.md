@@ -15,6 +15,13 @@
 - [Flask后端实践  连载八 Docker+Gunicorn+Nginx部署Flask后端](https://blog.csdn.net/qq_22034353/article/details/89289404)
 - [Flask后端实践  连载九 Flask-APScheduler定时任务与坑点解决方法](https://blog.csdn.net/qq_22034353/article/details/89362959)
 - [Flask后端实践  连载十 Flask图形验证码生成及验证](https://blog.csdn.net/qq_22034353/article/details/89631320)
+- Flask后端实践  连载十一 Flask实现JsonWebToken的用户认证授权
+- Flask后端实践  连载十二 Flask优雅的注册蓝图及自定义API
+- Flask后端实践  连载十三 Flask输出Excel报表
+- Flask后端实践  连载十四 Flask输出World报表
+- Flask后端实践  连载十五 Flask实现自关联无限层级(目录树)处理
+- Flask后端实践  连载十六 Flask实现微信Web端及APP端登录注册
+- Flask后端实践  连载十七 Flask实现手机号登录注册
 - [Flask后端实践  番外篇 Docker部署优化](https://blog.csdn.net/qq_22034353/article/details/89950228)
 ## Golang 相关
 - 待~~
