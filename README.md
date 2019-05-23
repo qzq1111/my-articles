@@ -20,8 +20,8 @@
 - [Flask后端实践  连载十三 Flask输出Excel报表](https://blog.csdn.net/qq_22034353/article/details/90234986)
 - [Flask后端实践  连载十四 Flask输出Word报表](https://blog.csdn.net/qq_22034353/article/details/90373814)
 - [Flask后端实践  连载十五 实现自关联无限层级生成目录树](https://blog.csdn.net/qq_22034353/article/details/90410549)
-- Flask后端实践  连载十六 Flask实现微信Web端及APP端登录注册
-- Flask后端实践  连载十七 Flask实现手机号登录注册
+- [Flask后端实践  连载十六 Flask实现微信Web端及APP端登录注册](https://blog.csdn.net/qq_22034353/article/details/90480732)
+- Flask后端实践  连载十七 Flask实现手机验证码登录注册
 - [Flask后端实践  番外篇 Docker部署优化](https://blog.csdn.net/qq_22034353/article/details/89950228)
 ## Golang 相关
 - 待~~
