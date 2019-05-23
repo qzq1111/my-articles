@@ -23,6 +23,7 @@ tips:
 3. 创建网站应用和移动应用，申请成功之后会下发`appid`和`secret`，web和app的`appid`、`secret`不一样。
 4. 数据库设计
     - user（用户表，存储用户信息）
+    
         |字段|类型|含义|
         |---|---|---|
         |id|int|用户主键ID|
@@ -31,6 +32,7 @@ tips:
         |...|...|...|
         
     - user_login_method（用户登陆方式表，存储不同登陆方式）
+    
       |字段|类型|含义|
       |---|---|---|
       |id|int|用户登陆方式主键ID|
@@ -39,6 +41,7 @@ tips:
       |identification|string|用户登陆标识，微信ID或手机号|
       |access_code|string|用户登陆通行码，密码或token|
       |...|...|...|
+      
 5. 映射数据库映射数据库到`model.py`
     ```python
     from flask_sqlalchemy import SQLAlchemy
