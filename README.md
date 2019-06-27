@@ -23,6 +23,7 @@
 - [Flask后端实践  连载十六 Flask实现微信Web端及APP端登录注册](https://blog.csdn.net/qq_22034353/article/details/90480732)
 - [Flask后端实践  连载十七 Flask实现手机验证码登录注册](https://blog.csdn.net/qq_22034353/article/details/90640981)
 - [Flask后端实践  连载十八 Flask输出PDF报表](https://blog.csdn.net/qq_22034353/article/details/93191167)
+- [Flask后端实践  连载十九 Flask工厂模式集成使用Celery](https://blog.csdn.net/qq_22034353/article/details/93893282)
 - [Flask后端实践  番外篇 Docker部署优化](https://blog.csdn.net/qq_22034353/article/details/89950228)
 ## Golang 相关
 - 待~~
