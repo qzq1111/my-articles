@@ -138,7 +138,7 @@ tips:
     @bp.route('/testFlaskAppContext', methods=["GET"])
     def test_flask_app_context():
         """
-        测试相加
+        测试获取flask上下文
         :return:
         """
         result = flask_app_context.delay()
