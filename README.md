@@ -26,4 +26,4 @@
 - [Flask后端实践  连载十九 Flask工厂模式集成使用Celery](https://blog.csdn.net/qq_22034353/article/details/93893282)
 - [Flask后端实践  番外篇 Docker部署优化](https://blog.csdn.net/qq_22034353/article/details/89950228)
 ## Golang 相关
-- 待~~
+- [Golang学习之路 连载一 Windows使用go mod命令及Goland配置](https://blog.csdn.net/qq_22034353/article/details/95335180)
