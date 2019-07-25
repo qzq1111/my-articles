@@ -184,6 +184,7 @@ steps:
       from_secret: sonar_token
 ```
 字段说明：
+
 | 字段|说明|
 |---|---|
 |sonar_host|sonar代码分析后推送地址|
@@ -230,6 +231,7 @@ steps:
       - '1.0'
 ```
 字段说明：
+
 | 字段|说明|
 |---|---|
 |registry|镜像推送地址|
@@ -261,6 +263,7 @@ name: default
     source: docker-compose.yaml
 ```
 字段说明：
+
 | 字段|说明|
 |---|---|
 |host|服务器地址|
@@ -293,6 +296,7 @@ name: default
       - docker-compose up -d
 ```
 字段说明：
+
 | 字段|说明|
 |---|---|
 |host|服务器地址|
