@@ -1,0 +1,37 @@
+version: "2"
+services:
+  drone-server:
+    image: drone/drone:1
+    container_name: drone_server
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data/drone:/data
+    environment:
+      - DRONE_GITHUB_SERVER=https://github.com
+      - DRONE_RUNNER_CAPACITY=2
+      - DRONE_TLS_AUTOCERT=true
+      - DRONE_SERVER_PROTO=http
+      # 此三项需要修改为你自己的Github应用申请
+      # 具体参考文档 https://docs.drone.io/installation/github/single-machine/
+      - DRONE_GITHUB_CLIENT_ID=4985615
+      - DRONE_GITHUB_CLIENT_SECRET=132456 
+      - DRONE_SERVER_HOST=drone.xxxx.com
+      
+    ports:
+      - "8001:80"
+      - "8000:443"
+    networks: 
+      - ci_net
+  sonarqube-service:
+    image: sonarqube:alpine
+    container_name: sonarqube_service
+    restart: always
+    ports:
+      - "8002:9000"
+    networks: 
+      - ci_net
+
+networks: 
+  ci_net:
+    
