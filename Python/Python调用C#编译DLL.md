@@ -13,17 +13,10 @@ tips:
 >Python for .NET(pythonnet)是一个软件包，可为Python程序员提供与Windows上的.NET4.0+公共语言运行时（CLR）以及Linux和OSX上的Mono运行时几乎无缝的集成。Python for .NET为.NET开发人员提供了功能强大的应用程序脚本工具。使用此软件包，可以使用.NET服务和以任何针对CLR的语言（C＃，VB.NET，F＃，C ++ / CLI）编写的组件来使用.NET应用程序编写脚本或使用Python构建整个应用程序。
 
 下面写一段Python调用C#编译成Dll的测试代码：
-   
-```python
-"""
-使用须知：
-1. 安装包：pip install pythonnet
-2. 文档地址：https://pythonnet.github.io/ 或者 https://github.com/pythonnet/pythonnet
-"""
-# coding:utf-8
-import clr
-# C#代码
-"""
+
+C#代码：
+
+```csharp
 using System;
 
 namespace TestDll
@@ -51,8 +44,18 @@ namespace TestDll
     }
 
 }
+```
 
+Python代码：
+
+```python
 """
+使用须知：
+1. 安装包：pip install pythonnet
+2. 文档地址：https://pythonnet.github.io/ 或者 https://github.com/pythonnet/pythonnet
+"""
+# coding:utf-8
+import clr
 
 # 引用Dll，不需要添加后缀
 clr.AddReference("TestDll")
