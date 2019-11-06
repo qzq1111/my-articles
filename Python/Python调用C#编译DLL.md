@@ -77,4 +77,4 @@ print(add_data)
 ## 总结  
 
 - 简单展示了Python调用C#编译的Dll
-- 更多的使用方法，大家可以参考官方文件。
+- 更多的使用方法，大家可以参考[官方文档](https://github.com/pythonnet/pythonnet)。
