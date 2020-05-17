@@ -302,7 +302,7 @@ Flask在0.3版本后就有了日志工具logger。
 ## logger在蓝图(Blueprint)中的使用
 
 1. 第一种方法(test.py)，使用flask内置的handler输出日志，返回名为`flask.app`的日志。
-	```python 
+	```python
 	from flask import current_app,Blueprint
 	bp = Blueprint("test", __name__, url_prefix='/test')
 	
@@ -325,7 +325,7 @@ Flask在0.3版本后就有了日志工具logger。
 	```
 2. 第二种方法(test.py)，输出日志是在某个文件产生的。
 	```python
-	import logging
+    import logging
 	from flask import Blueprint
 	
 	bp = Blueprint("test", __name__, url_prefix='/test')
