@@ -33,8 +33,8 @@ tips:
     ```
 
 4. ImageDraw类，自定义画图
-	```python
-	from PIL import Image, ImageFont, ImageDraw
+    ```python
+    from PIL import Image, ImageFont, ImageDraw
     im = Image.new('RGB', (400, 200), 'white')  # 图片模式、图片大小、图片颜色
     # font = ImageFont.load_default()  # 加载默认字体，该方法无法指定字体大小，只能输出英文字母和数值
     # 加载指定的字体,并指定字体大小，支持中文，需要将字体放入当前目录。
@@ -89,14 +89,14 @@ print(img_str)
 ```
 ## Flask图形验证码验证
 1. 封装图片生成类`util.py` 
-	```python
-	import base64
-	import io
-	import random
-	import string
-	from PIL import Image, ImageFont, ImageDraw
-	
-	class CaptchaTool(object):
+    ```python
+    import base64
+    import io
+    import random
+    import string
+    from PIL import Image, ImageFont, ImageDraw
+    
+    class CaptchaTool(object):
         """
         生成图片验证码
         """
@@ -146,7 +146,7 @@ print(img_str)
             self.im.save(buffered, format="JPEG")
             img_str = b"data:image/png;base64," + base64.b64encode(buffered.getvalue())
             return img_str, code
-	```
+    ```
 2. 新建Flask app `app.py`
     ```python
     from flask import Flask, session, request

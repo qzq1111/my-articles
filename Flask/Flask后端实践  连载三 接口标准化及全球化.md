@@ -11,13 +11,13 @@ tips:
 ## 接口统一返回形式
 1. 网上收罗一大圈，一般接口响应消息包含错误编码、信息以及数据
 2. 类似定义如下：
-	```json
-	{
-		"code":0,
-		"msg":"成功",
-		"data":null
-	}
-	```
+    ```json
+    {
+        "code":0,
+        "msg":"成功",
+        "data":null
+    }
+    ```
 - code：表示响应状态码
 - msg：表示响应消息
 - data：表示响应数据
@@ -67,7 +67,7 @@ tips:
         INVALID_PARAMETER =  "参数无效"
         ACCOUNT_OR_PASS_WORD_ERR =  "账户或密码错误"
     ```
-	
+    
 2. Flask 接口返回实例(app.py)
     ```python
     from flask import Flask,jsonify
